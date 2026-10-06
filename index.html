@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tommy 的学习站</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700&family=Source+Serif+4:ital,opsz,wght@0,8..60,700;1,8..60,400&display=swap">
+<style>
+:root{--bg:#F2F4F6;--surface:#FFFFFF;--ink:#17202A;--ink-2:#394654;--muted:#637083;--line:#D3DAE1;--accent:#1B6784;--accent-soft:#DBEBF1;
+  --font-body:"IBM Plex Sans","Noto Sans SC","PingFang SC",system-ui,sans-serif;--font-display:"Source Serif 4","Noto Serif SC","Songti SC",Georgia,serif;
+  --font-mono:"JetBrains Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#0F141A;--surface:#161D25;--ink:#E3E8ED;--ink-2:#C0C9D2;--muted:#8B98A6;--line:#2A3542;--accent:#62B4D3;--accent-soft:#15313D}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.7}
+.app{max-width:960px;margin:0 auto;padding-inline:20px;padding-block:56px 72px}
+header{display:grid;gap:8px;margin-bottom:36px}
+.kicker{font-family:var(--font-mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+h1{margin:0;font-family:var(--font-display);font-size:clamp(2rem,1.4rem + 2.4vw,2.8rem);line-height:1.15;text-wrap:balance}
+header p{margin:0;color:var(--ink-2);max-width:40rem}
+.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:18px}
+.course{display:grid;gap:10px;align-content:start;padding:22px 22px 20px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:inherit;text-decoration:none;transition:border-color .15s,transform .15s}
+.course:hover{border-color:var(--accent);transform:translateY(-2px)}
+.course .code{font-family:var(--font-mono);font-size:.78rem;font-weight:700;color:var(--accent);letter-spacing:.04em}
+.course .name{font-family:var(--font-display);font-size:1.6rem;font-weight:700;line-height:1.25}
+.course .name em{display:block;font-style:italic;font-weight:400;font-size:1rem;color:var(--muted)}
+.course .blurb{font-size:.95rem;color:var(--ink-2)}
+.course .blurb.en{font-size:.86rem;color:var(--muted)}
+.facts{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.facts li{font-size:.76rem;padding:2px 9px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
+.go{margin-top:4px;font-weight:600;color:var(--accent)}
+footer{margin-top:40px;font-size:.84rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.course{transition:none}.course:hover{transform:none}}
+</style>
+</head>
+<body>
+<style>
+.hubgate{--g-bg:#F2F4F6;--g-card:#FFFFFF;--g-ink:#17202A;--g-ink2:#394654;--g-muted:#637083;--g-line:#BCC6D0;--g-acc:#1B6784;--g-acc-ink:#FFFFFF;--g-bad:#B23A36;
+  min-height:100vh;display:grid;place-items:center;padding-block:32px;padding-inline:16px;background:var(--g-bg);color:var(--g-ink);
+  font-family:"IBM Plex Sans","Noto Sans SC","PingFang SC",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){.hubgate{color-scheme:dark;--g-bg:#0F141A;--g-card:#161D25;--g-ink:#E3E8ED;--g-ink2:#C0C9D2;--g-muted:#8B98A6;--g-line:#394654;--g-acc:#62B4D3;--g-acc-ink:#0A1318;--g-bad:#EE7E71}}
+body:has(.hubgate){margin:0;background:#F2F4F6}
+@media (prefers-color-scheme:dark){body:has(.hubgate){background:#0F141A}}
+.hubgate form{width:min(100%,380px);display:grid;gap:14px;padding:26px 24px;border:1px solid var(--g-line);border-radius:10px;background:var(--g-card)}
+.hubgate .code{font:600 .74rem/1.4 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.08em;color:var(--g-muted);text-transform:uppercase}
+.hubgate h1{margin:0;font:700 1.55rem/1.25 "Source Serif 4","Noto Serif SC",Georgia,serif}
+.hubgate p{margin:0;color:var(--g-ink2);font-size:.92rem;line-height:1.6}
+.hubgate input[type=password]{width:100%;padding:10px 12px;border:1px solid var(--g-line);border-radius:6px;background:var(--g-bg);color:var(--g-ink);font:inherit;font-size:1rem}
+.hubgate label{display:flex;gap:8px;align-items:center;font-size:.86rem;color:var(--g-ink2)}
+.hubgate button{padding:10px 14px;border:0;border-radius:6px;background:var(--g-acc);color:var(--g-acc-ink);font:inherit;font-weight:600;cursor:pointer}
+.hubgate button[disabled]{opacity:.6;cursor:wait}
+.hubgate .msg{min-height:1.4em;font-size:.86rem;color:var(--g-bad)}
+</style>
+<div class="hubgate" id="hubgate">
+  <form id="hubgate-form" autocomplete="on">
+    <span class="code">Tommy 的学习站 · Study Hub</span>
+    <h1>Tommy 的学习站</h1>
+    <p>输入密码后内容会在你的浏览器里解密显示。<br>Enter the password to decrypt this page in your browser.</p>
+    <input type="password" id="hubgate-pw" name="password" placeholder="密码 / Password" autocomplete="current-password" aria-label="密码 Password" required>
+    <label for="hubgate-remember"><input type="checkbox" id="hubgate-remember" checked> 在这台设备上记住 · Remember on this device</label>
+    <button type="submit" id="hubgate-go">进入 · Enter</button>
+    <div class="msg" id="hubgate-msg" aria-live="polite"></div>
+  </form>
+</div>
+<script>
+(function () {
+  var P = {"s": "Cb55iHXJTRwD/zg1VMx9Cg==", "i": "VPRUannG5iY6LihS", "n": 310000, "c": "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"};
+  var K = 'studyhub:key:' + P.s;
+  function b64(s) { var b = atob(s), u = new Uint8Array(b.length); for (var i = 0; i < b.length; i++) u[i] = b.charCodeAt(i); return u; }
+  function ub64(buf) { var u = new Uint8Array(buf), s = ''; for (var i = 0; i < u.length; i++) s += String.fromCharCode(u[i]); return btoa(s); }
+  function get(store) { try { return store.getItem(K); } catch (_) { return null; } }
+  function put(store, v) { try { store.setItem(K, v); } catch (_) {} }
+  function derive(pw) {
+    return crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveKey']).then(function (base) {
+      return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: b64(P.s), iterations: P.n, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, true, ['decrypt']);
+    });
+  }
+  function mount(html) {
+    var tpl = document.createElement('template');
+    tpl.innerHTML = html;
+    var scripts = Array.prototype.slice.call(tpl.content.querySelectorAll('script'));
+    scripts.forEach(function (s) { s.parentNode.removeChild(s); });
+    var g = document.getElementById('hubgate'); g.parentNode.removeChild(g);
+    document.body.appendChild(tpl.content);
+    var chain = Promise.resolve();
+    scripts.forEach(function (old) {
+      chain = chain.then(function () {
+        return new Promise(function (resolve) {
+          var s = document.createElement('script');
+          for (var i = 0; i < old.attributes.length; i++) s.setAttribute(old.attributes[i].name, old.attributes[i].value);
+          if (old.src) { s.onload = resolve; s.onerror = resolve; document.body.appendChild(s); }
+          else { s.textContent = old.textContent; document.body.appendChild(s); resolve(); }
+        });
+      });
+    });
+  }
+  function open(key, remember) {
+    return crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64(P.i) }, key, b64(P.c)).then(function (buf) {
+      crypto.subtle.exportKey('raw', key).then(function (raw) { var v = ub64(raw); put(sessionStorage, v); if (remember) put(localStorage, v); });
+      mount(new TextDecoder().decode(buf));
+    });
+  }
+  var form = document.getElementById('hubgate-form'), msg = document.getElementById('hubgate-msg'), go = document.getElementById('hubgate-go');
+  if (!window.crypto || !crypto.subtle) { msg.textContent = '这个浏览器不支持网页解密，请用最新版 Safari 或 Chrome。'; go.disabled = true; return; }
+  var saved = get(localStorage) || get(sessionStorage);
+  if (saved) {
+    crypto.subtle.importKey('raw', b64(saved), { name: 'AES-GCM' }, true, ['decrypt'])
+      .then(function (k) { return open(k, !!get(localStorage)); })
+      .catch(function () { try { localStorage.removeItem(K); sessionStorage.removeItem(K); } catch (_) {} });
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var pw = document.getElementById('hubgate-pw').value.trim();
+    if (!pw) return;
+    go.disabled = true; go.textContent = '解密中… Decrypting…'; msg.textContent = '';
+    derive(pw).then(function (k) { return open(k, document.getElementById('hubgate-remember').checked); })
+      .catch(function () { go.disabled = false; go.textContent = '进入 · Enter'; msg.textContent = '密码不对，再试一次。Wrong password, try again.'; });
+  });
+})();
+</script>
+
+</body>
+</html>
